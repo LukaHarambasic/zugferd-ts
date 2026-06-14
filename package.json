@@ -1,0 +1,77 @@
+{
+	"name": "zugferd-ts",
+	"version": "0.0.0",
+	"description": "TypeScript ZUGFeRD / Factur-X (EN 16931) e-invoice generator — CII XML + PDF/A-3 embedding. Zero-config, no Node builtins, runs in Node, Bun, browsers and edge.",
+	"type": "module",
+	"license": "MIT",
+	"author": "Luka Harambasic",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LukaHarambasic/zugferd-ts.git"
+	},
+	"homepage": "https://github.com/LukaHarambasic/zugferd-ts#readme",
+	"bugs": "https://github.com/LukaHarambasic/zugferd-ts/issues",
+	"keywords": [
+		"zugferd",
+		"factur-x",
+		"facturx",
+		"en16931",
+		"xrechnung",
+		"e-invoice",
+		"einvoice",
+		"cii",
+		"pdf-a3",
+		"pdfa3",
+		"invoice",
+		"germany",
+		"gobd"
+	],
+	"packageManager": "bun@1.3.12",
+	"engines": {
+		"node": ">=18"
+	},
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"scripts": {
+		"build": "tsdown",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome check",
+		"format": "biome format --write",
+		"changeset": "changeset",
+		"version": "changeset version",
+		"release": "bun run build && changeset publish",
+		"prepublishOnly": "bun run build"
+	},
+	"dependencies": {
+		"pdf-lib": "^1.17.1",
+		"xmlbuilder2": "^4.0.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.16",
+		"@changesets/cli": "^2.27.0",
+		"@vitest/coverage-v8": "^4.1.7",
+		"tsdown": "^0.15.6",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.7"
+	}
+}
