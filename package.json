@@ -1,6 +1,6 @@
 {
 	"name": "zugferd-ts",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "TypeScript ZUGFeRD / Factur-X (EN 16931) e-invoice generator — CII XML + PDF/A-3 embedding. Zero-config, no Node builtins, runs in Node, Bun, browsers and edge.",
 	"type": "module",
 	"license": "MIT",
